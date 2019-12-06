@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: e40579d982378d7469bbf2ea1eca7a43
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Weapon
+  - first:
+      213: 21300002
+    second: UpperBody
+  - first:
+      213: 21300004
+    second: Head
+  - first:
+      213: 21300006
+    second: UpperLArm
+  - first:
+      213: 21300008
+    second: LowerBody
+  - first:
+      213: 21300010
+    second: UpperRArm
+  - first:
+      213: 21300012
+    second: LowerLArm
+  - first:
+      213: 21300014
+    second: LowerRArm
+  - first:
+      213: 21300016
+    second: LowerLLeg
+  - first:
+      213: 21300018
+    second: UpperLLeg
+  - first:
+      213: 21300020
+    second: UpperRLeg
+  - first:
+      213: 21300022
+    second: LowerRLeg
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Weapon
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 701
+        width: 209
+        height: 212
+      alignment: 9
+      pivot: {x: 0.89541924, y: 0.11017623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fb8dbf8f981acaf998a19befd44390
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpperBody
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 624
+        width: 280
+        height: 325
+      alignment: 9
+      pivot: {x: 0.43822402, y: 0.3758141}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b933a273fc294679d83ab5af54a5ba15
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 643
+        width: 396
+        height: 370
+      alignment: 9
+      pivot: {x: 0.5291199, y: 0.15197605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d0b773ac31a348b898c53a7969e28a
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpperLArm
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 487
+        width: 60
+        height: 114
+      alignment: 9
+      pivot: {x: 0.7882885, y: 0.82032}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d92d74ce272231293b77455ad01388
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowerBody
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 356
+        width: 309
+        height: 236
+      alignment: 9
+      pivot: {x: 0.39426342, y: 0.87461156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9574cdb5cdbe96b50882b62bdc74732b
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpperRArm
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 480
+        width: 100
+        height: 144
+      alignment: 9
+      pivot: {x: 0.09639648, y: 0.8870536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58386b07e50b4f16a50b84f55d3a8cf
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowerLArm
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 117
+        height: 128
+      alignment: 9
+      pivot: {x: 0.8613872, y: 0.845345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9485a66be571941f4ae974d5c006a80f
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowerRArm
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 276
+        width: 113
+        height: 188
+      alignment: 9
+      pivot: {x: 0.39795083, y: 0.8782504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446c6c41560dc8dae8fc95cc98c507f6
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowerLLeg
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 79
+        width: 79
+        height: 149
+      alignment: 9
+      pivot: {x: 0.67029715, y: 0.8224701}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c346ad4cedb266819331448483a8396
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpperLLeg
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 67
+        width: 69
+        height: 185
+      alignment: 9
+      pivot: {x: 0.38858432, y: 0.8324407}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d7ff613ef21e585b951b8046ff934a
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpperRLeg
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 48
+        width: 92
+        height: 234
+      alignment: 9
+      pivot: {x: 0.24931468, y: 0.85317355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9e3c9471941d5c9aad927477fc08c2
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowerRLeg
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 68
+        width: 72
+        height: 189
+      alignment: 9
+      pivot: {x: 0.36653137, y: 0.8472252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d277a5a70801c853a8c7d7c3507fca61
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
