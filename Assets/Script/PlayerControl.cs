@@ -120,7 +120,7 @@ public class PlayerControl : MonoBehaviour
                 SceneManager.LoadScene("PlayerScore");
             }
 
-            if (attackPower > 7)
+            if (attackPower >= 7)
             {
                 SceneManager.LoadScene("Win");
             }
