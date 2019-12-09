@@ -17,12 +17,16 @@ public class PlayerControl : MonoBehaviour
     public AudioSource CatFoodSound;
     public AudioSource BoneSound;
 
+    public Button btnUp,btnLeft,btnRight;
+
     public Text NotifText;
 
     /* Data si player*/
     int life = 5;
     int attackPower = 0;
     bool isStun = false;
+    bool isWalkLeft=false;
+    bool isWalkRight=false;
 
     /* Game Object untuk nyawa player */
 
@@ -35,6 +39,34 @@ public class PlayerControl : MonoBehaviour
 
     Animator animator;
 
+    IEnumerator WaitForWalkToEnd(bool isleft)
+    {
+        yield return new WaitForSeconds(0.5f);
+        if(isleft){
+            isWalkLeft = false;
+        }else{
+            isWalkRight = false;
+        }
+    }
+
+
+    IEnumerator WaitForBtnClickToEnd(int whatBtn)
+    {
+        yield return new WaitForSeconds(0.1f);
+        Vector3 scale = btnLeft.transform.localScale;
+        if(whatBtn==1){
+            scale += new Vector3(0.1f, 0.1f, 0.1f);
+            btnLeft.transform.localScale = scale;
+        }
+        else if(whatBtn==2){
+            scale += new Vector3(0.1f, 0.1f, 0.1f);
+            btnRight.transform.localScale = scale;
+        }
+        else{
+            scale += new Vector3(0.1f, 0.1f, 0.1f);
+            btnUp.transform.localScale = scale;
+        }
+    }
 
     IEnumerator WaitForStunToEnd()
     {
@@ -55,6 +87,10 @@ public class PlayerControl : MonoBehaviour
         }
         whatAttack();
         whatLife();
+        
+        btnUp.onClick.AddListener(aksiUp);
+        btnLeft.onClick.AddListener(aksiLeft);
+        btnRight.onClick.AddListener(aksiRight);
     }
 
     // Update is called once per frame
@@ -65,28 +101,25 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetKeyDown("space") || Input.GetKey(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.9f);
-                // Vector3 thePosition = transform.localPosition;
-                // if(thePosition.y < -2.7){
-                    GetComponent<Rigidbody2D>().AddForce(jumpForce);
-                // }
-                // transform.position += new Vector3(0,2,0);
-                animCounter = 3;
-                animator.SetInteger("catAnim", animCounter);
+                GetComponent<Rigidbody2D>().AddForce(jumpForce);
+            
+                // animCounter = 3;
+                // animator.SetInteger("catAnim", animCounter);
                 playMusic("jump");
             }
 
             if (Input.GetKey(KeyCode.S))
             {
                 transform.position += new Vector3(0, -2, 0) * Time.deltaTime;
-                animCounter = 3;
-                animator.SetInteger("catAnim", animCounter);
+                // animCounter = 3;
+                // animator.SetInteger("catAnim", animCounter);
             }
 
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)|| isWalkLeft)
             {
                 transform.position += new Vector3(-4, 0, 0) * Time.deltaTime * 2;
-                animCounter = 1;
-                animator.SetInteger("catAnim", animCounter);
+                // animCounter = 1;
+                // animator.SetInteger("catAnim", animCounter);
                 GetComponent<SpriteRenderer>().flipX = false;
 
                 Vector3 theScale = transform.localScale;
@@ -99,11 +132,11 @@ public class PlayerControl : MonoBehaviour
                 
             }
 
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)||isWalkRight)
             {
                 transform.position += new Vector3(4, 0, 0) * Time.deltaTime * 2;
-                animCounter = 1;
-                animator.SetInteger("catAnim", animCounter);
+                // animCounter = 1;
+                // animator.SetInteger("catAnim", animCounter);
                 GetComponent<SpriteRenderer>().flipX = true;
             
                 Vector3 theScale = transform.localScale;
@@ -140,6 +173,41 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    void aksiUp(){
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.9f);
+        GetComponent<Rigidbody2D>().AddForce(jumpForce);
+        // animCounter = 3;
+        // animator.SetInteger("catAnim", animCounter);
+        playMusic("jump");
+
+        Vector3 scale = btnLeft.transform.localScale;
+        scale -= new Vector3(0.1f, 0.1f, 0.1f);
+        btnUp.transform.localScale = scale;
+        StartCoroutine(WaitForBtnClickToEnd(3));
+    }
+
+    void aksiLeft(){
+        if(!isWalkLeft){
+            isWalkLeft=true;
+            StartCoroutine(WaitForWalkToEnd(true));
+        }
+
+        Vector3 scale = btnLeft.transform.localScale;
+        scale -= new Vector3(0.1f, 0.1f, 0.1f);
+        btnLeft.transform.localScale = scale;
+        StartCoroutine(WaitForBtnClickToEnd(1));
+    }
+
+    void aksiRight(){
+        if(!isWalkRight){
+            isWalkRight=true;
+            StartCoroutine(WaitForWalkToEnd(false));
+        }
+        Vector3 scale = btnRight.transform.localScale;
+        scale -= new Vector3(0.1f, 0.1f, 0.1f);
+        btnRight.transform.localScale = scale;
+        StartCoroutine(WaitForBtnClickToEnd(2));
+    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {

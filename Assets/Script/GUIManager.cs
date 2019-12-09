@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class GUIManager : MonoBehaviour {
 	public Image[] bone;
-
 	// Use this for initialization
 	void Start () {
 		
