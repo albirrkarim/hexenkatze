@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/UnityLogoFlash.unity
-    guid: b6989d7e1a4756ffc87c8437360cc652
-  - enabled: 1
     path: Assets/Scenes/GameTitleFlash.unity
     guid: 1393d6c51672e761086068028a3ae64f
   - enabled: 1
