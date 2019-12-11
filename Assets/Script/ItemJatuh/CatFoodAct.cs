@@ -7,12 +7,8 @@ public class CatFoodAct : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float range = 5;
-        float x=GameObject.FindGameObjectWithTag("Player").transform.position.x- range * Random.value;
-        float y=GameObject.FindGameObjectWithTag("Player").transform.position.y+10;
-
-        Vector2 veloc  = new Vector2(x,y);
-        transform.position=veloc;
+        GameObject Player= GameObject.FindGameObjectWithTag("Player");
+        transform.position=new Vector2(Player.transform.position.x- 5 * Random.value,Player.transform.position.y+10);
     }
 
     // Update is called once per frame
@@ -21,10 +17,8 @@ public class CatFoodAct : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D coll){
-        // if(coll.gameObject.tag=="tanahTag"){
-        //     Debug.Log("Hapus");
-            Destroy(gameObject);
-        // }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        Destroy(gameObject);
     }
 }

@@ -18,7 +18,6 @@ public class MusicController : MonoBehaviour
             PlayerPrefs.SetInt("isUseMusic",1);
 		}else{
             onOffMusic.isOn=false;
-
             PlayerPrefs.SetInt("isUseMusic",0);
 		}
     }

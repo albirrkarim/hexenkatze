@@ -16,11 +16,12 @@ public class GameOver : MonoBehaviour
 	}
 
 	public static int LoadHighscore(){
-		int hg = 0;
-		if(!PlayerPrefs.HasKey("attackPower"))
+		if(!PlayerPrefs.HasKey("attackPower")){
 			PlayerPrefs.SetInt("attackPower", 0);
-		else
-			hg=PlayerPrefs.GetInt("attackPower");
-		return hg;
+			return 0;
+		}
+		else{
+			return PlayerPrefs.GetInt("attackPower");
+		}
 	}
 }

@@ -22,11 +22,12 @@ public class PlayerControl : MonoBehaviour
     public Text NotifText;
 
     /* Data si player*/
-    int life = 5;
-    int attackPower = 0;
-    bool isStun = false;
-    bool isWalkLeft=false;
-    bool isWalkRight=false;
+    int life         = 5;
+    int attackPower  = 0;
+    bool isStun      = false;
+    bool isJump      = false;
+    bool isWalkLeft  = false;
+    bool isWalkRight = false;
 
     /* Game Object untuk nyawa player */
 
@@ -38,35 +39,7 @@ public class PlayerControl : MonoBehaviour
     public int animCounter = 0;
 
     Animator animator;
-
-    IEnumerator WaitForWalkToEnd(bool isleft)
-    {
-        yield return new WaitForSeconds(0.5f);
-        if(isleft){
-            isWalkLeft = false;
-        }else{
-            isWalkRight = false;
-        }
-    }
-
-
-    IEnumerator WaitForBtnClickToEnd(int whatBtn)
-    {
-        yield return new WaitForSeconds(0.1f);
-        Vector3 scale = btnLeft.transform.localScale;
-        if(whatBtn==1){
-            scale += new Vector3(0.1f, 0.1f, 0.1f);
-            btnLeft.transform.localScale = scale;
-        }
-        else if(whatBtn==2){
-            scale += new Vector3(0.1f, 0.1f, 0.1f);
-            btnRight.transform.localScale = scale;
-        }
-        else{
-            scale += new Vector3(0.1f, 0.1f, 0.1f);
-            btnUp.transform.localScale = scale;
-        }
-    }
+    Vector3 scale;
 
     IEnumerator WaitForStunToEnd()
     {
@@ -87,10 +60,6 @@ public class PlayerControl : MonoBehaviour
         }
         whatAttack();
         whatLife();
-        
-        btnUp.onClick.AddListener(aksiUp);
-        btnLeft.onClick.AddListener(aksiLeft);
-        btnRight.onClick.AddListener(aksiRight);
     }
 
     // Update is called once per frame
@@ -98,7 +67,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (!isStun)
         {
-            if (Input.GetKeyDown("space") || Input.GetKey(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown("space") || Input.GetKey(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || isJump)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.9f);
                 GetComponent<Rigidbody2D>().AddForce(jumpForce);
@@ -106,13 +75,6 @@ public class PlayerControl : MonoBehaviour
                 // animCounter = 3;
                 // animator.SetInteger("catAnim", animCounter);
                 playMusic("jump");
-            }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.position += new Vector3(0, -2, 0) * Time.deltaTime;
-                // animCounter = 3;
-                // animator.SetInteger("catAnim", animCounter);
             }
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)|| isWalkLeft)
@@ -125,7 +87,6 @@ public class PlayerControl : MonoBehaviour
                 Vector3 theScale = transform.localScale;
                 
                 if(theScale.x < 0 ){
-                    // transform.localScale.x *= new Vector3(-1, 0, 0);
                     theScale.x *= -1;
                 }
                 transform.localScale = theScale;
@@ -142,7 +103,6 @@ public class PlayerControl : MonoBehaviour
                 Vector3 theScale = transform.localScale;
                 
                 if(theScale.x > 0 ){
-                    // transform.localScale.x *= new Vector3(-1, 0, 0);
                     theScale.x *= -1;
                 }
                 transform.localScale = theScale;
@@ -160,9 +120,6 @@ public class PlayerControl : MonoBehaviour
             // animCounter=0;
             // animator.SetInteger("catAnim",animCounter);
 
-            PlayerPrefs.SetInt("attackPower", attackPower);
-            PlayerPrefs.SetInt("playerLife", life);
-
             Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
             if (screenPosition.y > Screen.height || screenPosition.y < 0)
             {
@@ -173,40 +130,46 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void aksiUp(){
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.9f);
-        GetComponent<Rigidbody2D>().AddForce(jumpForce);
-        // animCounter = 3;
-        // animator.SetInteger("catAnim", animCounter);
-        playMusic("jump");
-
-        Vector3 scale = btnLeft.transform.localScale;
+    void onPress(Button btn){
+        scale = btn.transform.localScale;
         scale -= new Vector3(0.1f, 0.1f, 0.1f);
-        btnUp.transform.localScale = scale;
-        StartCoroutine(WaitForBtnClickToEnd(3));
+        btn.transform.localScale = scale;
     }
 
-    void aksiLeft(){
-        if(!isWalkLeft){
-            isWalkLeft=true;
-            StartCoroutine(WaitForWalkToEnd(true));
-        }
-
-        Vector3 scale = btnLeft.transform.localScale;
-        scale -= new Vector3(0.1f, 0.1f, 0.1f);
-        btnLeft.transform.localScale = scale;
-        StartCoroutine(WaitForBtnClickToEnd(1));
+    void onUnPress(Button btn){
+        scale = btn.transform.localScale;
+        scale += new Vector3(0.1f, 0.1f, 0.1f);
+        btn.transform.localScale = scale;
     }
 
-    void aksiRight(){
-        if(!isWalkRight){
-            isWalkRight=true;
-            StartCoroutine(WaitForWalkToEnd(false));
-        }
-        Vector3 scale = btnRight.transform.localScale;
-        scale -= new Vector3(0.1f, 0.1f, 0.1f);
-        btnRight.transform.localScale = scale;
-        StartCoroutine(WaitForBtnClickToEnd(2));
+    public void aksiUpPress(){
+        isJump=true;
+        onPress(btnUp);
+    }
+
+    public void aksiUpUnPress(){
+       isJump=false;
+       onUnPress(btnUp); 
+    }
+
+    public void aksiLeftPress(){
+        isWalkLeft=true;
+        onPress(btnLeft);
+    }
+
+    public void aksiLeftUnPress(){
+        isWalkLeft=false;
+        onUnPress(btnLeft);
+    }
+
+    public void aksiRightPress(){
+        isWalkRight=true;
+        onPress(btnRight);
+    }
+
+    public void aksiRightUnPress(){
+        isWalkRight=false;
+        onUnPress(btnRight);
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -214,7 +177,6 @@ public class PlayerControl : MonoBehaviour
         /* Mulai nabrak */
         if (coll.gameObject.tag == "boneTag")
         {
-            // Debug.Log("Bone");
             playMusic("boneTag");
             isStun = true;
             NotifText.text = "Stunned ..";
@@ -222,32 +184,28 @@ public class PlayerControl : MonoBehaviour
         }
         if (coll.gameObject.tag == "fishTag")
         {
-            // Debug.Log("Fish");
             tambahLife();
             playMusic("fishTag");
         }
         if (coll.gameObject.tag == "catFoodTag")
         {
-            // Debug.Log("Cat Food");
             tambahLife();
             playMusic("catFoodTag");
         }
         if (coll.gameObject.tag == "swordMinTag")
         {
-            // Debug.Log("Sword Min");
             kurangiAttack();
             playMusic("swordMinTag");
         }
         if (coll.gameObject.tag == "swordPlusTag")
         {
-            // Debug.Log("Sword Plus");
             attackPower ++;
+            PlayerPrefs.SetInt("attackPower", attackPower);
             whatAttack();
             playMusic("swordPlusTag");
         }
         if (coll.gameObject.tag == "dogTag")
         {
-            // Debug.Log("Dog");
             kurangiLife();
             playMusic("dogTag");
         }
@@ -296,6 +254,7 @@ public class PlayerControl : MonoBehaviour
         {
             life = 5;
         }
+        PlayerPrefs.SetInt("playerLife",life);
         whatLife();
     }
 
@@ -306,6 +265,7 @@ public class PlayerControl : MonoBehaviour
         {
             life = 0;
         }
+        PlayerPrefs.SetInt("playerLife",life);
         whatLife();
     }
 
@@ -314,13 +274,13 @@ public class PlayerControl : MonoBehaviour
         if(attackPower<0){
             attackPower=0;
         }
+        PlayerPrefs.SetInt("attackPower", attackPower);
         whatAttack();
     }
 
     void whatAttack()
     {
-        int i = 0;
-        for (i = 0; i < 7; i++){   
+        for (int i = 0; i < 7; i++){   
             if(i<attackPower){
                 arrAttackBar[i].SetActive(true);
             }else{
@@ -331,8 +291,7 @@ public class PlayerControl : MonoBehaviour
 
     void whatLife()
     {
-        int i = 0;
-        for (i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++){
             if(i<life){
                 arrLifeBar[i].SetActive(true);
             }else{

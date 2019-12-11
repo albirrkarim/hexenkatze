@@ -12,8 +12,6 @@ public class GeneratorItem : MonoBehaviour
     public GameObject Dog;
     public GameObject Dogkanan;
 
-
-
     // Start is called before the first frame update
     void Start()
     {  

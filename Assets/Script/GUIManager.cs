@@ -65,8 +65,7 @@ public class GUIManager : MonoBehaviour {
 	}
 	
 	public void whatLevel(int idx){
-		int i;
-		for (i = 0; i < 3; i++){   
+		for (int i = 0; i < 3; i++){   
             if(i<idx){
                 bone[i].gameObject.SetActive(true);
             }else{

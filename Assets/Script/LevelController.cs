@@ -12,9 +12,7 @@ public class LevelController : MonoBehaviour
         if(!PlayerPrefs.HasKey("whatLevel")){
 			PlayerPrefs.SetInt("whatLevel",1);
 		}
-
-        int level=PlayerPrefs.GetInt("whatLevel");
-        whatLevel(level);
+        whatLevel(PlayerPrefs.GetInt("whatLevel"));
     }
 
     // Update is called once per frame
@@ -34,8 +32,7 @@ public class LevelController : MonoBehaviour
     }
 
 	public void whatLevel(int idx){
-		int i;
-		for (i = 0; i < 3; i++){   
+		for (int i = 0; i < 3; i++){   
             if(i<idx){
                 bone[i].gameObject.SetActive(true);
             }else{

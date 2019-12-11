@@ -70,8 +70,6 @@
      <Compile Include="Assets\Script\LevelController.cs" />
      <Compile Include="Assets\Script\MusicController.cs" />
      <Compile Include="Assets\Script\PlayerControl.cs" />
-     <Compile Include="Assets\Script\TugasAct.cs" />
-     <Compile Include="Assets\Script\UnityLogoFlash.cs" />
      <None Include="Assets\Environment\platform\Items\items_spritesheet.xml" />
      <None Include="Assets\Environment\platform\Enemies\enemies_spritesheet.txt" />
      <None Include="Assets\Environment\platform\Player\p2_spritesheet.txt" />
