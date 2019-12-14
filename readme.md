@@ -65,53 +65,53 @@ Health akan berkurang jika anjing menyerang player, jika health bar kosong maka 
 Jika attack bar penuh maka player menang
 
 ### g.	Attack Power
-<img src="\Assets\Image\sword++.png" width="300" height="300">
+<img src="Assets/Image/sword++.png" width="300" height="300">
 Attack power (kekuatan serangan ) jika player mengenai item sword plus 
-<img src="\Assets\Image\sword--.png" width="300" height="300">
+<img src="Assets/Image/sword--.png" width="300" height="300">
 Attack power akan berkurang jika player mengenai item sword min
 
 ### h.	Dog Attack
 Anjing bisa menyerang player dalam interval statis
 
 ### i.	Objects
-<img src="\Assets\Image\bone.png" width="300" height="300">
+<img src="Assets/Image/bone.png" width="300" height="300">
 Gambar tulang berfungsi sebagai tantangan untuk pemain . Jika karakter utama / player terkena tulang , maka akan mengeluarkan efek negatif pada player
-<img src="\Assets\Image\fish.png" width="300" height="300">
-<img src="\Assets\Image\cat-food.png" width="300" height="300">
+<img src="Assets/Image/fish.png" width="300" height="300">
+<img src="Assets/Image/cat-food.png" width="300" height="300">
 Gambar makanan kucing berfungsi untuk menambah nyawa kucing / player
 
 ### j.	Screen Flow
-<img src="\Assets\Image\Scene%20FLow\Scene%20FLow.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Scene%20FLow.png" width="300" height="300">
 ### h.	Screen
 1.Splash Screen
-<img src="\Assets\Image\Scene%20FLow\Logo%20Unity.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Logo%20Unity.png" width="300" height="300">
 2.Loading Screen
-<img src="\Assets\Image\Scene%20FLow\Logo%20Hezenkatze.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Logo%20Hezenkatze.png" width="300" height="300">
 3.Main Menu Screen
-<img src="\Assets\Image\Scene%20FLow\Main%20Menu.png" width="300" height="300">
+<img src="/Assets/Image/Scene%20FLow/Main%20Menu.png" width="300" height="300">
 4.Option & Info Screen
-<img src="\Assets\Image\Scene%20FLow\Option.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Option.png" width="300" height="300">
 5.How to play screen
-<img src="\Assets\Image\Scene%20FLow\How%20To%20Play.png" width="300" height="300">
+<img src="Asset/Image/Scene%20FLow/How%20To%20Play.png" width="300" height="300">
 6.Game Over Screen
-<img src="\Assets\Image\Scene%20FLow\Game%20Over.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Game%20Over.png" width="300" height="300">
 7.Game Play
-<img src="\Assets\Image\Scene%20FLow\Game%20Play.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Game%20Play.png" width="300" height="300">
 8.Win Screen
-<img src="\Assets\Image\Scene%20FLow\Winner.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Winner.png" width="300" height="300">
 9.Pause Screen
-<img src="\Assets\Image\Scene%20FLow\Pause.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Pause.png" width="300" height="300">
 10.Credit
-<img src="\Assets\Image\Scene%20FLow\Credit.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Credit.png" width="300" height="300">
 
 ## Chapter 4 : Karakter dan Suara
 ### 4.1 Characters
 #### 4.1.1 Main Character
-<img src="\Assets\Character\Little%20Cat%20Girl\Little_Cat_Girl_ref.png" width="300" height="300">
+<img src="Assets/Character/Little%20Cat%20Girl/Little_Cat_Girl_ref.png" width="300" height="300">
 Ini adalah karakter utama yang akan dimainkan oleh player dalam permainan ini
 
 #### 4.1.2 Main Enemy
-<img src="\Assets\Character\dog\Idle%20(1).png" width="300" height="300">
+<img src="/Assets/Character/dog/Idle%20(1).png" width="300" height="300">
 Ini adalah karakter musuh utama (anjing) yang akan menjadi lawan dari karakter utama dalam permainan ini
 
 ### 4.2 AUDIO
@@ -127,9 +127,9 @@ Game Over
 Stage dalam game ini terbagi menjadi dua yaitu normal dan hard. Untuk normal , air akan memiliki efek negatif seperti mengurangi bar HP, tulang memiliki efek negatif seperti reverse kontrol dan mengurangi bar HP, makanan dan ikan memiliki efek menambah bar HP player, dan pedang memiliki efek menambah bar attack sebagai objektif di game ini. Untuk hard, air akan memiliki efek negatif seperti mengurangi bar HP dan slow, tulang memiliki efek negatif seperti mengurangi bar HP, reverse control, dan stun.
 
 ### b.	Pola stage
-<img src="\Assets\Image\drop.jpeg" width="300" height="300">
+<img src="Assets/Image/drop.jpeg" width="300" height="300">
 Gambaran umum game yang akan dibuat. Item akan jatuh dari atas dan player akan menggerakan karakter dibawah. 
-<img src="\Assets\Image\sleding.jpg" width="300" height="300">
+<img src="Assets/Image/sleding.jpg" width="300" height="300">
 Gambar ketika musuh akan menyerang player dari kanan atau kiri dengan interval statis
-<img src="\Assets\Image\drop_pedang.jpeg" width="300" height="300">
+<img src="Assets/Image/drop_pedang.jpeg" width="300" height="300">
 Gambar ketika player menerima item seperti makanan , ikan, air, tulang, pedang
