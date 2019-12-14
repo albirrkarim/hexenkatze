@@ -81,7 +81,7 @@ Gambar tulang berfungsi sebagai tantangan untuk pemain . Jika karakter utama / p
 Gambar makanan kucing berfungsi untuk menambah nyawa kucing / player
 
 ### j.	Screen Flow
-<img src="Assets/Image/Scene%20FLow/Scene%20FLow.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/Scene%20Flow.png" width="300" height="300">
 ### h.	Screen
 1.Splash Screen
 <img src="Assets/Image/Scene%20FLow/Logo%20Unity.png" width="300" height="300">
@@ -92,7 +92,7 @@ Gambar makanan kucing berfungsi untuk menambah nyawa kucing / player
 4.Option & Info Screen
 <img src="Assets/Image/Scene%20FLow/Option.png" width="300" height="300">
 5.How to play screen
-<img src="Asset/Image/Scene%20FLow/How%20To%20Play.png" width="300" height="300">
+<img src="Assets/Image/Scene%20FLow/How%20To%20Play.png" width="300" height="300">
 6.Game Over Screen
 <img src="Assets/Image/Scene%20FLow/Game%20Over.png" width="300" height="300">
 7.Game Play
