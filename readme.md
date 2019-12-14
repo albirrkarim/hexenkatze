@@ -82,26 +82,36 @@ Gambar makanan kucing berfungsi untuk menambah nyawa kucing / player
 
 ### j.	Screen Flow
 <img src="Assets/Image/Scene%20FLow/Scene%20Flow.png" width="300" height="300">
+
 ### h.	Screen
-1.Splash Screen
+* Splash Screen
 <img src="Assets/Image/Scene%20FLow/Logo%20Unity.png" width="300" height="300">
-2.Loading Screen
+
+* Loading Screen
 <img src="Assets/Image/Scene%20FLow/Logo%20Hezenkatze.png" width="300" height="300">
-3.Main Menu Screen
+
+* Main Menu Screen
 <img src="/Assets/Image/Scene%20FLow/Main%20Menu.png" width="300" height="300">
-4.Option & Info Screen
+
+* Option & Info Screen
 <img src="Assets/Image/Scene%20FLow/Option.png" width="300" height="300">
-5.How to play screen
+
+* How to play screen
 <img src="Assets/Image/Scene%20FLow/How%20To%20Play.png" width="300" height="300">
-6.Game Over Screen
+
+* Game Over Screen
 <img src="Assets/Image/Scene%20FLow/Game%20Over.png" width="300" height="300">
-7.Game Play
+
+* Game Play
 <img src="Assets/Image/Scene%20FLow/Game%20Play.png" width="300" height="300">
-8.Win Screen
+
+* Win Screen
 <img src="Assets/Image/Scene%20FLow/Winner.png" width="300" height="300">
-9.Pause Screen
+
+* Pause Screen
 <img src="Assets/Image/Scene%20FLow/Pause.png" width="300" height="300">
-10.Credit
+
+* Credit
 <img src="Assets/Image/Scene%20FLow/Credit.png" width="300" height="300">
 
 ## Chapter 4 : Karakter dan Suara
