@@ -134,7 +134,7 @@ Game Over
 
 ## Chapter 5 : Stage
 ### a.	Gambaran umum
-Stage dalam game ini terbagi menjadi dua yaitu normal dan hard. Untuk normal , air akan memiliki efek negatif seperti mengurangi bar HP, tulang memiliki efek negatif seperti reverse kontrol dan mengurangi bar HP, makanan dan ikan memiliki efek menambah bar HP player, dan pedang memiliki efek menambah bar attack sebagai objektif di game ini. Untuk hard, air akan memiliki efek negatif seperti mengurangi bar HP dan slow, tulang memiliki efek negatif seperti mengurangi bar HP, reverse control, dan stun.
+Stage dalam game ini terbagi menjadi 3 yaitu easy, normal, hard. Yang membedakan dalam setiap stage nya yaitu drop rate item yang akan semakin cepat bila semakin susah. Karena semakin cepat drop item makan kemungkinan terkena item negatif semakin besar dan membuat darah semakin cepat habis dikarenakan diserang oleh anjing. 
 
 ### b.	Pola stage
 <img src="Assets/Image/drop.jpeg" width="300" height="300">
