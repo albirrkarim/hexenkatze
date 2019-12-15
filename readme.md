@@ -65,9 +65,9 @@ Health akan berkurang jika anjing menyerang player, jika health bar kosong maka 
 Jika attack bar penuh maka player menang
 
 ### g.	Attack Power
-<img src="Assets/Image/sword++.png" width="300" height="300">
+<img src="Assets/Image/swplus.png" width="300" height="300">
 Attack power (kekuatan serangan ) jika player mengenai item sword plus 
-<img src="Assets/Image/sword--.png" width="300" height="300">
+<img src="Assets/Image/swmin.png" width="300" height="300">
 Attack power akan berkurang jika player mengenai item sword min
 
 ### h.	Dog Attack
