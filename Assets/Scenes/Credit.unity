@@ -492,7 +492,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2ded05099fc43c7c8954f1e5a510c20d, type: 3}
-    m_FontSize: 53
+    m_FontSize: 54
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1395,7 +1395,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -37.00003, y: 170.7}
-  m_SizeDelta: {x: 285.6, y: 77.1}
+  m_SizeDelta: {x: 181, y: 77.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547668301
 MonoBehaviour:
@@ -1992,7 +1992,7 @@ PrefabInstance:
     - target: {fileID: 7256134059088655943, guid: cf22105fadf2fbe00ac01f9b123df0ca,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 50
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7256134059088655943, guid: cf22105fadf2fbe00ac01f9b123df0ca,
         type: 3}
