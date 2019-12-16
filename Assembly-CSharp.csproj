@@ -72,6 +72,7 @@
      <Compile Include="Assets\Script\PlayerControl.cs" />
      <None Include="Assets\Environment\platform\Items\items_spritesheet.xml" />
      <None Include="Assets\Environment\platform\Enemies\enemies_spritesheet.txt" />
+     <None Include="Assets\Font\midnight_minutes\license.txt" />
      <None Include="Assets\Environment\platform\Player\p2_spritesheet.txt" />
      <None Include="Assets\Environment\platform\license.txt" />
      <None Include="Assets\Environment\platform\Tiles\tiles_spritesheet.xml" />
