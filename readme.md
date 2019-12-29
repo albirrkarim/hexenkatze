@@ -49,9 +49,6 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -61,7 +58,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Pull Request dipersilakan. Untuk perubahan besar, harap hubungi kami terlebih dahulu untuk membahas apa yang ingin Anda ubah.
+
+Pastikan untuk memperbarui projek dengan sesuai.
 
 ## Versioning
 
@@ -76,7 +75,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Aldo Doohan** - *Artist* - [meowjestic](https://github.com/meowjestic)
 * **Ahmad Faisal** - *Artist* - [AhmadFaisal22](https://github.com/AhmadFaisal22)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
