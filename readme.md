@@ -1,6 +1,6 @@
-# Project Title
+# Hexenkatze
 
-One Paragraph of project description goes here
+Permainan 2D yang bertemakan tentang penyihir kucing yang berusaha mengumpulkan kembali kekuatan nya yang hilang sehingga dapat mengalahkan anjing yang telah membuat Penyihir kucing kehilangan kekuatan nya. Tentu saja anjing akan menghalangi penyihir kucing dengan menyerang kucing dalam pengumpulan kekuatannya.
 
 ## Getting Started
 
