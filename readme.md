@@ -8,11 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+*	Unity 2019.2.17f1
 
-```
-Give examples
-```
 
 ### Installing
 
@@ -72,7 +69,12 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Albirr Karim** - *Programmer* - [albirrkarim](https://github.com/albirrkarim)
+* **Yumnanda** - *Programmer* - [yumnanda](https://github.com/yumnanda)
+* **Lyongki** - *Designer* - [lyongki](https://github.com/lyongki)
+* **Imam Septian** - *Designer* - [imamseptian](https://github.com/imamseptian)
+* **Aldo Doohan** - *Artist* - [meowjestic](https://github.com/meowjestic)
+* **Ahmad Faisal** - *Artist* - [AhmadFaisal22](https://github.com/AhmadFaisal22)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
