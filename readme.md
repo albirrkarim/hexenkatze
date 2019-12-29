@@ -1,145 +1,87 @@
-# Hexenkatze
+# Project Title
 
-## Kelompok 5 : A11.4701
-> 1.	Al Birr Karim Susanto(A11.2017.10642)[Programmer]
-> 2.	Yumnanda Abid Saputra(A11.2017.10651)[Programmer] 
-> 3.	Imam Septian AW(A11.2017.10240)[Designer]
-> 4.	Aldo Doohan(A11.2017.10141)[Artist]
-> 5.	Lyongky Suryono T(A11. 2017.10255)[Designer]
-> 6.	Ahmad Faisal(A11.2017.10257)[Artist]
+One Paragraph of project description goes here
 
-## Chapter 1 : Game Overview
-### a.	Perkenalan
-Permainan 2D yang bertemakan tentang penyihir kucing yang berusaha mengumpulkan kembali kekuatan nya yang hilang sehingga dapat mengalahkan anjing yang telah membuat Penyihir kucing kehilangan kekuatan nya. Tentu saja anjing akan menghalangi penyihir kucing dengan menyerang kucing dalam pengumpulan kekuatannya. 
+## Getting Started
 
-### b.	Objektif permainan
-Objektif permainan ini adalah kucing mampu mempertahankan bar HP agar tidak habis hingga bar attack akan penuh dan membuat i anjing kalah dengan kekuatan penuh dari kucing. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### c.	Genre
-Action-survival
+### Prerequisites
 
-### d.	Fitur
-*	Permainan 2D
-*	Third person view
-*	Solo player
-*	Fixed camera
-*	Dinamis Musik 
+What things you need to install the software and how to install them
 
-### e.	Platform
-Game 2D ini akan berjalan di android dan dapat dimainkan juga melalui PC atau laptop dengan emulator berbasis android
+```
+Give examples
+```
 
-### f.	Kategori pemain
-Pemain yang direkomendasikan dalam permainan ini adalah pemain dari umur 12 tahun keatas. Dikarenakan permainan ini butuh konsentrasi dan kelincahan untuk dapat menyelesaikan permainan ini. 
+### Installing
 
-### g.	Bahasa
-Bahasa yang digunakan dalam game ini adalah bahasa indonesia
+A step by step series of examples that tell you how to get a development env running
 
-### h.	Music
-Music yang digunakan di permainan ini beragam sehingga membuat menarik dengan efek musik pada setiap tantangan maupun pada awal permainan. Contohnya adalah ketika kucing bersentuhan dengan item, bertemu dengan anjing, terkena serangan, hingga menyelesaikan permainan ini. 
+Say what the step will be
 
-## Chapter 2	: Story
-### a.	Outline 
-Liana adalah seekor kucing penyihir dari klan Kocheng, suatu hari kehilangan kekuatan dan kemampuan penglihatannya karena bertarung dengan seekor Anjing. Liana ingat bahwa ada satu cara untuk mengembalikan kembali kemampuan pengelihatannya yaitu dengan memakan 7 makanan kucing yang jatuh dari hutan kucing keramat. Namun Anjing yang mengalahkan Liana mengetahui bahwa Liana berupaya untuk memulihkan penglihatannya sehingga dia tidak tinggal diam. Anjing berupaya mengganggu Liana supaya penglihatannya tidak kembali dan Liana harus dapat bertahan dari gangguan si Anjing supaya kekuatan dia kembali.
+```
+Give the example
+```
 
-### b.	Story Synopsis
-Menceritakan kisah Liana seorang kucing penyihir dari klan Kocheng, suatu hari kehilangan kekuatan dan kemampuan penglihatannya karena bertarung dengan seekor Anjing. Tanpa kekuatan dan penglihatan Liana sangatlah lemah dan tidak berdaya. Namun suatu saat Liana ingat bahwa ada satu cara untuk mengembalikan kembali kemampuan pengelihatannya yaitu dengan mengumpulkan kekuatan sehingga mampu mengeluarkan serangan utama. Namun Anjing yang mengalahkan Liana mengetahui bahwa Liana berupaya untuk memulihkan penglihatannya sehingga dia tidak tinggal diam. Anjing berupaya mengganggu Liana supaya penglihatannya tidak kembali dengan menjatuhkan makanan yang beracun supaya Liana salah makan kemudian mati.
-Karena Liana tahu si Anjing pasti akan mengganggunya maka dia meminta bantuan seorang petualang untuk memandu dia agar dia memakan makanan yang tepat dari hutan kucing. Liana dan sang petualang harus dapat bekerja sama agar kekuatan Liana kembali. Dapatkah mereka melewati rintangan dan jebakan yang telah disiapkan oleh Anjing? Kuncinya ada di sang petualang apakah dia dapat memandu Liana yang tidak bisa melihat memakan makanan yang tepat?
+And repeat
 
-## Chapter 3 : Game Mechanic
-### a.	Camera
-Camera dalam game ini statis
+```
+until finished
+```
 
-### b.	Single player
-Game ini hanya bisa single player
+End with an example of getting some data out of the system or using it for a little demo
 
-### c.	General Movement
-Player bisa berpindah tempat dengan menekan tombol W – A – S – D
+## Running the tests
 
-### d.	Jumping
-Player bisa lompat dengan menekan tombol spasi
+Explain how to run the automated tests for this system
 
-### e.	Health Bar
-Health akan berkurang jika anjing menyerang player, jika health bar kosong maka player mati.
+### Break down into end to end tests
 
-### f.	Bar Attack
-Jika attack bar penuh maka player menang
+Explain what these tests test and why
 
-### g.	Attack Power
-<img src="Assets/Image/swplus.png" width="300" height="300">
-Attack power (kekuatan serangan ) jika player mengenai item sword plus 
-<img src="Assets/Image/swmin.png" width="300" height="300">
-Attack power akan berkurang jika player mengenai item sword min
+```
+Give an example
+```
 
-### h.	Dog Attack
-Anjing bisa menyerang player dalam interval statis
+### And coding style tests
 
-### i.	Objects
-<img src="Assets/Image/bone.png" width="300" height="300">
-Gambar tulang berfungsi sebagai tantangan untuk pemain . Jika karakter utama / player terkena tulang , maka akan mengeluarkan efek negatif pada player
-<img src="Assets/Image/fish.png" width="300" height="300">
-<img src="Assets/Image/cat-food.png" width="300" height="300">
-Gambar makanan kucing berfungsi untuk menambah nyawa kucing / player
+Explain what these tests test and why
 
-### j.	Screen Flow
-<img src="Assets/Image/Scene%20FLow/Scene%20Flow.png" width="300" height="300">
+```
+Give an example
+```
 
-### h.	Screen
-* Splash Screen
-<img src="Assets/Image/Scene%20FLow/Logo%20Unity.png" width="300" height="300">
+## Deployment
 
-* Loading Screen
-<img src="Assets/Image/Scene%20FLow/Logo%20Hezenkatze.png" width="300" height="300">
+Add additional notes about how to deploy this on a live system
 
-* Main Menu Screen
-<img src="/Assets/Image/Scene%20FLow/Main%20Menu.png" width="300" height="300">
+## Built With
 
-* Option & Info Screen
-<img src="Assets/Image/Scene%20FLow/Option.png" width="300" height="300">
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-* How to play screen
-<img src="Assets/Image/Scene%20FLow/How%20To%20Play.png" width="300" height="300">
+## Contributing
 
-* Game Over Screen
-<img src="Assets/Image/Scene%20FLow/Game%20Over.png" width="300" height="300">
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-* Game Play
-<img src="Assets/Image/Scene%20FLow/Game%20Play.png" width="300" height="300">
+## Versioning
 
-* Win Screen
-<img src="Assets/Image/Scene%20FLow/Winner.png" width="300" height="300">
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-* Pause Screen
-<img src="Assets/Image/Scene%20FLow/Pause.png" width="300" height="300">
+## Authors
 
-* Credit
-<img src="Assets/Image/Scene%20FLow/Credit.png" width="300" height="300">
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
-## Chapter 4 : Karakter dan Suara
-### 4.1 Characters
-#### 4.1.1 Main Character
-<img src="Assets/Character/Little%20Cat%20Girl/Little_Cat_Girl_ref.png" width="300" height="300">
-Ini adalah karakter utama yang akan dimainkan oleh player dalam permainan ini
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-#### 4.1.2 Main Enemy
-<img src="/Assets/Character/dog/Idle%20(1).png" width="300" height="300">
-Ini adalah karakter musuh utama (anjing) yang akan menjadi lawan dari karakter utama dalam permainan ini
+## License
 
-### 4.2 AUDIO
-* Music :
-Backsound saat tidak berhadapan dengan Bos
-Backsound saat berhadapan dengan Bos
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-* SFX :
-Game Over
+## Acknowledgments
 
-## Chapter 5 : Stage
-### a.	Gambaran umum
-Stage dalam game ini terbagi menjadi 3 yaitu easy, normal, hard. Yang membedakan dalam setiap stage nya yaitu drop rate item yang akan semakin cepat bila semakin susah. Karena semakin cepat drop item makan kemungkinan terkena item negatif semakin besar dan membuat darah semakin cepat habis dikarenakan diserang oleh anjing. 
-
-### b.	Pola stage
-<img src="Assets/Image/drop.jpeg" width="300" height="300">
-Gambaran umum game yang akan dibuat. Item akan jatuh dari atas dan player akan menggerakan karakter dibawah. 
-<img src="Assets/Image/sleding.jpg" width="300" height="300">
-Gambar ketika musuh akan menyerang player dari kanan atau kiri dengan interval statis
-<img src="Assets/Image/drop_pedang.jpeg" width="300" height="300">
-Gambar ketika player menerima item seperti makanan , ikan, air, tulang, pedang
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
