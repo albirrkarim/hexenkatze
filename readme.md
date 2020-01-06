@@ -13,7 +13,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-Petunjuk Install game
+1. Download the game from link bellow
+https://github.com/albirrkarim/hexenkatze/blob/master/Hexenkatze.apk
+
+2. Then click that files, and follow the install instruction
 
 ## Built With
 
