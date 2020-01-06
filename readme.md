@@ -39,3 +39,6 @@ You can send a pull request to run on your local machine for testing. for change
 
 ## Acknowledgments
 This project aims to complete the final exam in lectures. We hope this project can be useful.
+
+## License
+This project is under MIT License
