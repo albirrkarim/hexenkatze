@@ -7,6 +7,9 @@ public class DogActRight : MonoBehaviour
     float speed;
     public int animCounter = 0;
     Animator animator;
+
+    int nyawa=4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +26,15 @@ public class DogActRight : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D coll){
-        if(coll.gameObject.tag=="Player"){
+        if(coll.gameObject.tag=="Player"||coll.gameObject.tag=="dogTag"){
             Destroy(gameObject);
-        }
-        else if(coll.gameObject.tag=="dogTag"){
-            Destroy(gameObject);
+        }else if(coll.gameObject.tag=="cherryTag"){
+            int attack = PlayerPrefs.GetInt("attackPower");
+
+            nyawa-=attack;
+            if(nyawa<=0){
+                Destroy(gameObject);
+            }
         }
     }
 

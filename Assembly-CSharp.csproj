@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Music\Retro Sound Effects\Demo\Demo.cs" />
+     <Compile Include="Assets\Script\CherryAct.cs" />
+     <Compile Include="Assets\Script\CherryActRight.cs" />
      <Compile Include="Assets\Script\DogAct.cs" />
      <Compile Include="Assets\Script\DogActRight.cs" />
      <Compile Include="Assets\Script\GameOver.cs" />

@@ -8,6 +8,7 @@ public class DogAct : MonoBehaviour
     float speed;
     public int animCounter = 0;
     Animator animator;
+    int nyawa=4;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,15 @@ public class DogAct : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll){
         if(coll.gameObject.tag=="Player"){
+
             Destroy(gameObject);
+        }else if(coll.gameObject.tag=="cherryTag"){
+            int attack = PlayerPrefs.GetInt("attackPower");
+
+            nyawa-=attack;
+            if(nyawa<=0){
+                Destroy(gameObject);
+            }
         }
     }
     // Update is called once per frame

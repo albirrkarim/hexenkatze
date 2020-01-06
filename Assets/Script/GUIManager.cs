@@ -82,6 +82,17 @@ public class GUIManager : MonoBehaviour {
 	public void OnLevel(){
 		SceneManager.LoadScene("Level");
 	}
+
+	public void OnNextLevel(){
+		int level=PlayerPrefs.GetInt("whatLevel");
+		level++;
+		if(level==4){
+			SceneManager.LoadScene("Credit");
+		}else{
+			PlayerPrefs.SetInt("whatLevel",level);
+			SceneManager.LoadScene("PlayGame");
+		}
+	}
 	
 	public void OnHowToPlay(){
 		SceneManager.LoadScene("HowToPlay");

@@ -13,6 +13,7 @@ TagManager:
   - swordMinTag
   - dogTag
   - musicToggle
+  - cherryTag
   layers:
   - Default
   - TransparentFX

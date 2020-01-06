@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     public AudioSource FishSound;
     public AudioSource CatFoodSound;
     public AudioSource BoneSound;
+    public AudioSource FireSound;
 
     public Button btnUp,btnLeft,btnRight;
 
@@ -41,11 +42,27 @@ public class PlayerControl : MonoBehaviour
     Animator animator;
     Vector3 scale;
 
+    /*Background */
+
+    public GameObject[] Background;
+
+    public GameObject CherryLeft;
+    public GameObject CherryRight;
+
+    bool canFire=true;
+    bool isFire=false;
+
     IEnumerator WaitForStunToEnd()
     {
         yield return new WaitForSeconds(1f);
         isStun = false;
         NotifText.text = "";
+    }
+
+    IEnumerator WaitForCanFire()
+    {
+        yield return new WaitForSeconds(0.2f);
+        canFire = true;
     }
 
     // Start is called before the first frame update
@@ -60,6 +77,21 @@ public class PlayerControl : MonoBehaviour
         }
         whatAttack();
         whatLife();
+
+        if(!PlayerPrefs.HasKey("whatLevel")){
+			PlayerPrefs.SetInt("whatLevel",1);
+		}
+        
+        int level=PlayerPrefs.GetInt("whatLevel");
+        int i;
+
+        for(i=0;i<3;i++){
+            if(level==i+1){
+                Background[i].gameObject.SetActive(true);
+            }else{
+                Background[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -108,6 +140,22 @@ public class PlayerControl : MonoBehaviour
                 transform.localScale = theScale;
             }
 
+            if (Input.GetKey(KeyCode.E)||isFire)
+            {
+                Vector3 theScale = transform.localScale;
+                if(canFire){
+                    if(theScale.x<0){
+                        /* Player hadap kiri*/
+                        Instantiate(CherryLeft);
+                    }else{
+                        Instantiate(CherryRight);
+                    }
+                    canFire=false;
+                    FireSound.Play();
+                    StartCoroutine(WaitForCanFire());
+                }
+            }
+
             if (life <= 0)
             {
                 SceneManager.LoadScene("PlayerScore");
@@ -142,6 +190,14 @@ public class PlayerControl : MonoBehaviour
         btn.transform.localScale = scale;
     }
 
+    public void aksiFirePress(){
+        isFire=true;
+    }
+
+    public void aksiFireUnPress(){
+        isFire=false;
+    }
+    
     public void aksiUpPress(){
         isJump=true;
         onPress(btnUp);
