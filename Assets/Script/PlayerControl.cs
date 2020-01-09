@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
     /* Initialize */
+    /* Tinggi lompat */
     public Vector2 jumpForce = new Vector2(0, 350);
+
+    /* Music */
     public AudioSource JumpSound;
     public AudioSource SwordPlusSound;
     public AudioSource SwordMinSound;
@@ -18,8 +20,10 @@ public class PlayerControl : MonoBehaviour
     public AudioSource BoneSound;
     public AudioSource FireSound;
 
+    /* Button */
     public Button btnUp,btnLeft,btnRight;
 
+    /* UI Text untuk notifikasi flash */
     public Text NotifText;
 
     /* Data si player*/
@@ -43,21 +47,24 @@ public class PlayerControl : MonoBehaviour
     Vector3 scale;
 
     /*Background */
-
     public GameObject[] Background;
 
+    /* Cherry */
     public GameObject CherryLeft;
     public GameObject CherryRight;
 
-    bool canFire=true;
-    bool isFire=false;
-    bool isReverseMovement=false;
+    bool canFire            = true;
+    bool isFire             = false;
+    bool isReverseMovement  = false;
 
-    IEnumerator WaitForStunToEnd()
+    /* Like a Set Timeout function in javascript */
+    IEnumerator WaitForStunToEnd(bool isClearingText=false)
     {
         yield return new WaitForSeconds(1f);
         isStun = false;
-        NotifText.text = "";
+        if(isClearingText){
+            NotifText.text = "";
+        }
     }
 
     IEnumerator WaitForCanFire()
@@ -70,6 +77,7 @@ public class PlayerControl : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         isReverseMovement = false;
+        NotifText.text="";
     }
 
     // Start is called before the first frame update
@@ -99,10 +107,6 @@ public class PlayerControl : MonoBehaviour
                 Background[i].gameObject.SetActive(false);
             }
         }
-
-        // if(PlayerPrefs.HasKey("isReverseMovement")){
-        //     isReverseMovement = PlayerPrefs.GetInt("isReverseMovement");
-        // }
     }
 
     // Update is called once per frame
@@ -124,12 +128,12 @@ public class PlayerControl : MonoBehaviour
 
                 GetComponent<SpriteRenderer>().flipX = false;
 
-                Vector3 theScale = transform.localScale;
+                scale = transform.localScale;
                 
-                if(theScale.x < 0 ){
-                    theScale.x *= -1;
+                if(scale.x < 0 ){
+                    scale.x *= -1;
                 }
-                transform.localScale = theScale;
+                transform.localScale = scale;
                 
             }
 
@@ -138,19 +142,19 @@ public class PlayerControl : MonoBehaviour
                 transform.position += new Vector3(4, 0, 0) * Time.deltaTime * 2;
                 GetComponent<SpriteRenderer>().flipX = true;
             
-                Vector3 theScale = transform.localScale;
+                scale = transform.localScale;
                 
-                if(theScale.x > 0 ){
-                    theScale.x *= -1;
+                if(scale.x > 0 ){
+                    scale.x *= -1;
                 }
-                transform.localScale = theScale;
+                transform.localScale = scale;
             }
 
             if (Input.GetKey(KeyCode.E)||isFire)
             {
-                Vector3 theScale = transform.localScale;
+                scale = transform.localScale;
                 if(canFire){
-                    if(theScale.x<0){
+                    if(scale.x<0){
                         /* Player hadap kiri*/
                         Instantiate(CherryLeft);
                     }else{
@@ -177,11 +181,12 @@ public class PlayerControl : MonoBehaviour
             {
                 isStun = true;
                 NotifText.text = "Can't fly higher";
-                StartCoroutine(WaitForStunToEnd());
+                StartCoroutine(WaitForStunToEnd(true));
             }
         }
     }
 
+    /* Event Handler Button (onPress / onUnPress) */
     void onPress(Button btn){
         scale = btn.transform.localScale;
         scale -= new Vector3(0.1f, 0.1f, 0.1f);
@@ -215,43 +220,40 @@ public class PlayerControl : MonoBehaviour
     public void aksiLeftPress(){
         if(isReverseMovement){
             isWalkRight=true;
-            onPress(btnRight);
         }else{
-            isWalkLeft=true;
-            onPress(btnLeft);
+            isWalkLeft=true;  
         }
+        onPress(btnLeft);
     }
 
     public void aksiLeftUnPress(){
         if(isReverseMovement){
             isWalkRight=false;
-            onUnPress(btnRight);
         }else{
             isWalkLeft=false;
-            onUnPress(btnLeft);
         }
+        onUnPress(btnLeft);
     }
 
     public void aksiRightPress(){
         if(isReverseMovement){
             isWalkLeft=true;
-            onPress(btnLeft);
         }else{
-            isWalkRight=true;
-            onPress(btnRight);
+            isWalkRight=true;   
         }
+        onPress(btnRight);
     }
 
     public void aksiRightUnPress(){
         if(isReverseMovement){
             isWalkLeft=false;
-            onUnPress(btnLeft);
         }else{
             isWalkRight=false;
-            onUnPress(btnRight);
         }
+        onUnPress(btnRight);
     }
 
+    /* Event Handler Collider Listener */
     void OnCollisionEnter2D(Collision2D coll)
     {
         /* Mulai nabrak */
@@ -262,13 +264,13 @@ public class PlayerControl : MonoBehaviour
             
             if(PlayerPrefs.GetInt("whatLevel") == 3){
                 isReverseMovement=true;
-                NotifText.text = "Stunned and paralized ...";
+                NotifText.text = "Paralized ...";
                 StartCoroutine(normalizeMovement());
+                StartCoroutine(WaitForStunToEnd(false));
             }else{
                 NotifText.text = "Stunned ...";
+                StartCoroutine(WaitForStunToEnd(true));
             }
-
-            StartCoroutine(WaitForStunToEnd());
         }
         if (coll.gameObject.tag == "fishTag")
         {
@@ -299,6 +301,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    /* Fungsi Tambahan */
     void playMusic(string mode)
     {   
         if (!PlayerPrefs.HasKey("isUseMusic") || PlayerPrefs.GetInt("isUseMusic") == 1)
