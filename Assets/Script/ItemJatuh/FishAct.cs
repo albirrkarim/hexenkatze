@@ -18,6 +18,8 @@ public class FishAct : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D coll){
-        Destroy(gameObject);
+        if(coll.gameObject.tag!="cherryTag"){
+            Destroy(gameObject);
+        }
     }
 }

@@ -51,6 +51,7 @@ public class PlayerControl : MonoBehaviour
 
     bool canFire=true;
     bool isFire=false;
+    bool isReverseMovement=false;
 
     IEnumerator WaitForStunToEnd()
     {
@@ -63,6 +64,12 @@ public class PlayerControl : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         canFire = true;
+    }
+
+    IEnumerator normalizeMovement()
+    {
+        yield return new WaitForSeconds(5f);
+        isReverseMovement = false;
     }
 
     // Start is called before the first frame update
@@ -92,6 +99,10 @@ public class PlayerControl : MonoBehaviour
                 Background[i].gameObject.SetActive(false);
             }
         }
+
+        // if(PlayerPrefs.HasKey("isReverseMovement")){
+        //     isReverseMovement = PlayerPrefs.GetInt("isReverseMovement");
+        // }
     }
 
     // Update is called once per frame
@@ -104,16 +115,13 @@ public class PlayerControl : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.9f);
                 GetComponent<Rigidbody2D>().AddForce(jumpForce);
             
-                // animCounter = 3;
-                // animator.SetInteger("catAnim", animCounter);
                 playMusic("jump");
             }
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)|| isWalkLeft)
             {
                 transform.position += new Vector3(-4, 0, 0) * Time.deltaTime * 2;
-                // animCounter = 1;
-                // animator.SetInteger("catAnim", animCounter);
+
                 GetComponent<SpriteRenderer>().flipX = false;
 
                 Vector3 theScale = transform.localScale;
@@ -128,8 +136,6 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)||isWalkRight)
             {
                 transform.position += new Vector3(4, 0, 0) * Time.deltaTime * 2;
-                // animCounter = 1;
-                // animator.SetInteger("catAnim", animCounter);
                 GetComponent<SpriteRenderer>().flipX = true;
             
                 Vector3 theScale = transform.localScale;
@@ -165,9 +171,7 @@ public class PlayerControl : MonoBehaviour
             {
                 SceneManager.LoadScene("Win");
             }
-            // animCounter=0;
-            // animator.SetInteger("catAnim",animCounter);
-
+    
             Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
             if (screenPosition.y > Screen.height || screenPosition.y < 0)
             {
@@ -209,23 +213,43 @@ public class PlayerControl : MonoBehaviour
     }
 
     public void aksiLeftPress(){
-        isWalkLeft=true;
-        onPress(btnLeft);
+        if(isReverseMovement){
+            isWalkRight=true;
+            onPress(btnRight);
+        }else{
+            isWalkLeft=true;
+            onPress(btnLeft);
+        }
     }
 
     public void aksiLeftUnPress(){
-        isWalkLeft=false;
-        onUnPress(btnLeft);
+        if(isReverseMovement){
+            isWalkRight=false;
+            onUnPress(btnRight);
+        }else{
+            isWalkLeft=false;
+            onUnPress(btnLeft);
+        }
     }
 
     public void aksiRightPress(){
-        isWalkRight=true;
-        onPress(btnRight);
+        if(isReverseMovement){
+            isWalkLeft=true;
+            onPress(btnLeft);
+        }else{
+            isWalkRight=true;
+            onPress(btnRight);
+        }
     }
 
     public void aksiRightUnPress(){
-        isWalkRight=false;
-        onUnPress(btnRight);
+        if(isReverseMovement){
+            isWalkLeft=false;
+            onUnPress(btnLeft);
+        }else{
+            isWalkRight=false;
+            onUnPress(btnRight);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -235,7 +259,15 @@ public class PlayerControl : MonoBehaviour
         {
             playMusic("boneTag");
             isStun = true;
-            NotifText.text = "Stunned ..";
+            
+            if(PlayerPrefs.GetInt("whatLevel") == 3){
+                isReverseMovement=true;
+                NotifText.text = "Stunned and paralized ...";
+                StartCoroutine(normalizeMovement());
+            }else{
+                NotifText.text = "Stunned ...";
+            }
+
             StartCoroutine(WaitForStunToEnd());
         }
         if (coll.gameObject.tag == "fishTag")
