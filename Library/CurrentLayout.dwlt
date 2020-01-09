@@ -173,7 +173,7 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 694
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &8
 MonoBehaviour:
@@ -333,20 +333,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Environment/Painted HQ 2D Forest Medieval Background/night
+    - Assets/Environment/Sunnyland/artwork/Sprites/Items/cherry
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Environment/Painted HQ 2D Forest Medieval Background/night
+  - Assets/Environment/Sunnyland/artwork/Sprites/Items/cherry
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /media/yumna/Storage/Kuliah/Game/hexenkatze-master
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 91}
-    m_SelectedIDs: 3e330000
-    m_LastClickedID: 13118
-    m_ExpandedIDs: 00000000d62f0000c2320000763600007a3800001c390000743b00003e3e0000063f00004a3f000000ca9a3b
+    scrollPos: {x: 0, y: 312.84338}
+    m_SelectedIDs: d8370000
+    m_LastClickedID: 14296
+    m_ExpandedIDs: 00000000342a0000202d0000322f0000d4300000d83200007a330000d2350000ac3600009c38000064390000a839000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +374,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d62f0000c2320000763600007a3800003e3e0000063f00004a3f0000
+    m_ExpandedIDs: 00000000342a0000202d0000d4300000d83200009c38000064390000a8390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -428,7 +428,7 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
-  m_DirectoriesAreaWidth: 115
+  m_DirectoriesAreaWidth: 359
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -493,10 +493,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 112}
-      m_SelectedIDs: 
+      scrollPos: {x: 0, y: 91}
+      m_SelectedIDs: 1c360000
       m_LastClickedID: 0
-      m_ExpandedIDs: 86fbffff7c400000924000009c400000f240000030420000cc420000d64200004c430000f2430000fc43000034440000
+      m_ExpandedIDs: 2ad8ffff36d8ffffc4d9ffff8efbffffd27000000c72000022730000a8730000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -556,9 +556,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.5061011, y: -0.5854575, z: -31.158752}
+    m_Target: {x: -0.15262392, y: 0.12864852, z: 0}
     speed: 2
-    m_Value: {x: -2.2375078, y: -0.7367884, z: -31.087826}
+    m_Value: {x: -0.15240936, y: 0.12870167, z: -0.000040533792}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -591,9 +591,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 16.471699
+    m_Target: 5.3187714
     speed: 2
-    m_Value: 15.762392
+    m_Value: 5.319437
   m_Ortho:
     m_Target: 1
     speed: 2
