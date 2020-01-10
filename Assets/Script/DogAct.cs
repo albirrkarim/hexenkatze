@@ -8,15 +8,14 @@ public class DogAct : MonoBehaviour
     Animator animator;
     float speed;
     public int animCounter = 0;
-    int nyawa=4;
-    bool canJump=true;
+    int nyawa = 4;
+    bool canJump = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         speed = 5;
-        animator= GetComponent<Animator>();
-        animator.SetInteger("dogAnim",2);
+        animator = GetComponent<Animator>();
+        animator.SetInteger("dogAnim", 2);
         transform.position += transform.right * speed * Time.deltaTime;
         StartCoroutine(Example());
     }
@@ -29,16 +28,21 @@ public class DogAct : MonoBehaviour
 
     IEnumerator jumpAgain()
     {
-        yield return new WaitForSeconds(Random.Range(1.0f,4.0f));
-        canJump=true;
+        yield return new WaitForSeconds(Random.Range(1.0f, 4.0f));
+        canJump = true;
     }
 
-    void OnCollisionEnter2D(Collision2D coll){
-        if(coll.gameObject.tag=="Player"){
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
             Destroy(gameObject);
-        }else if(coll.gameObject.tag=="cherryTag"){
-            nyawa-=PlayerPrefs.GetInt("attackPower");
-            if(nyawa<=0){
+        }
+        else if (coll.gameObject.tag == "cherryTag")
+        {
+            nyawa -= PlayerPrefs.GetInt("attackPower");
+            if (nyawa <= 0)
+            {
                 Destroy(gameObject);
             }
         }
@@ -46,12 +50,13 @@ public class DogAct : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right *speed * Time.deltaTime;
-        if(canJump){
-            Vector2 jumpForce = new Vector2(0, Random.Range(100,300));
+        transform.position += transform.right * speed * Time.deltaTime;
+        if (canJump)
+        {
+            Vector2 jumpForce = new Vector2(0, Random.Range(100, 300));
             GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.9f);
             GetComponent<Rigidbody2D>().AddForce(jumpForce);
-            canJump=false;
+            canJump = false;
             StartCoroutine(jumpAgain());
         }
     }
